@@ -3,7 +3,7 @@
 
 **Projet :** expérience web 3D immersive inspirée de l'univers robotique de Boston Dynamics  
 **Version :** 1.0 — 28 octobre 2026  
-**Langue du site :** anglais  
+**Langue du site :** anglais par défaut, français à la demande  
 **Positionnement :** portfolio expérimental / musée interactif, non officiel
 
 ---
@@ -18,7 +18,7 @@ Créer une expérience cinématique pilotée par le défilement, racontant une p
 - La 3D est le sujet principal ; l'interface reste discrète.
 - Chaque animation contribue à la narration.
 - L'éclairage révèle les volumes progressivement.
-- Les textes sont courts, lisibles et en anglais.
+- Les textes sont courts, lisibles, en anglais par défaut et traduits en français.
 - Le scroll contrôle l'histoire, dans les deux sens.
 - Le site reste utilisable sans WebGL avancé ni animations complexes.
 
@@ -232,3 +232,11 @@ Métadonnées lues dans les fichiers GLB locaux ; les tailles correspondent aux 
 | `models/drone_robot.glb` | Compagnon sphérique | 0,4 Mo | Non | Aucune | noortjeschuur / Sketchfab, CC BY 4.0 |
 
 Prévoir une optimisation géométrique des deux robots principaux avant diffusion web. Le rig de Spot ne fournit pas de cycle de marche ; le scan Atlas nécessite une préparation supplémentaire pour une animation articulée. Conserver les auteurs, les liens source et la licence embarqués pour les crédits du site.
+
+## 12. Préférences et informations officielles
+
+- Sélecteurs EN/FR et clair/sombre accessibles dans l’en-tête et le chargement, choix mémorisés localement.
+- Le thème sombre conserve la palette de référence ; le thème clair emploie un fond blanc cassé, du texte graphite et un orange assombri pour les contrastes.
+- La scène adapte son sol, son brouillard et ses lumières sans remonter le canvas.
+- Les contenus produit sont des synthèses des sources officielles consignées dans `docs/CONTENT_SOURCES.md`, avec liens d’approfondissement.
+- Le scan historique d’Atlas ne représente pas le produit actuel décrit. Le drone reste un compagnon indépendant.

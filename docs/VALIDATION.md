@@ -18,3 +18,12 @@ Limites de vérification : pas de mesure de FPS ni de test sur téléphone physi
 - Fin de chargement observée : retrait de l’écran et retour à la scène interactive. Débit normal rétabli après le test.
 - TypeScript, lint et les cinq tests passent après intégration.
 - Build final validé avec `npm run build -- --webpack`. La tentative Turbopack a échoué sur une ouverture de port refusée par l’environnement de validation, y compris après demande d’exécution hors bac à sable.
+
+## Contenu officiel, langues et thèmes
+
+- Deux tâches exécutées en parallèle : synthèse des sources officielles et préférences/thèmes ; intégration et validation dans le fil principal.
+- TypeScript et lint passent. Sept tests passent, dont parité EN/FR des champs visibles/accessibles et cohérence des liens officiels.
+- Build de production validé avec `npm run build -- --webpack`.
+- Chrome desktop et émulation 400 × 814 : changements EN/FR et clair/sombre contrôlés visuellement. Préférences FR/clair restaurées après rechargement, y compris dans l’écran de chargement.
+- Les pages sources et la distinction entre scan historique et Atlas actuel sont consignées dans `CONTENT_SOURCES.md`.
+- La qualité sur téléphone physique reste à vérifier ; aucune mesure de FPS n’est ajoutée.

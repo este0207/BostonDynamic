@@ -5,6 +5,7 @@ import { MathUtils, Vector3, type Group } from 'three';
 import { Robot } from './robot';
 import { Lighting } from './lighting';
 import { CameraRig } from './camera-rig';
+import { usePreferences, type Theme } from './preferences';
 import { sample, type SceneState } from '@/lib/story';
 class AssetBoundary extends Component<{ children: ReactNode; onError: () => void }, { failed: boolean }> {
   state = { failed: false };
@@ -59,21 +60,22 @@ function ReadyFrame({ onReady }: { onReady: () => void }) {
   });
   return null;
 }
-function Ground() {
+function Ground({ theme }: { theme: Theme }) {
   const mobile = useThree((state) => state.size.width < 760);
   return <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, mobile ? -2.51 : -1.67, 0]}>
-    <planeGeometry args={[200, 200]} /><meshStandardMaterial color="#080a0d" roughness={0.65} metalness={0.25} />
+    <planeGeometry args={[200, 200]} /><meshStandardMaterial color={theme === 'light' ? '#e7ebee' : '#080a0d'} roughness={0.65} metalness={0.25} />
   </mesh>;
 }
 export default function Scene({ story, onError, onReady }: { story: RefObject<SceneState>; onError: () => void; onReady: () => void }) {
+  const { theme } = usePreferences();
   return <Canvas camera={{ position: [0, 0.25, 8.4], fov: 35, near: 0.1, far: 70 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }} onCreated={({ gl }) => { gl.domElement.addEventListener('webglcontextlost', onError, { once: true }); }}>
     <CameraRig story={story} />
     <Suspense fallback={null}>
-      <Lighting story={story} />
+      <Lighting story={story} theme={theme} />
       <Actors story={story} onAssetError={onError} />
       <ReadyFrame onReady={onReady} />
     </Suspense>
-    <Ground />
-    <fog attach="fog" args={['#080a0d', 14, 32]} />
+    <Ground theme={theme} />
+    <fog attach="fog" args={[theme === 'light' ? '#f5f6f7' : '#080a0d', 14, 32]} />
   </Canvas>;
 }

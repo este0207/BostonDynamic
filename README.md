@@ -1,6 +1,6 @@
 # The Evolution of Motion
 
-Prototype personnel de narration 3D, non affilié à Boston Dynamics. Interface en anglais, direction Dark Industrial, référence dans `charteGraphique/CHARTE_GRAPHIQUE.md`.
+Prototype personnel de narration 3D, non affilié à Boston Dynamics. Interface en anglais par défaut, traduction française et thèmes sombre/clair, direction industrielle, référence dans `charteGraphique/CHARTE_GRAPHIQUE.md`.
 
 ## Lancer
 
@@ -25,6 +25,12 @@ npm run build
 Un écran d’initialisation reprend le fond noir, les accents orange et la typographie technique. Sa progression suit le gestionnaire de chargement des assets. La révélation attend que les trois modèles et l’éclairage soient montés et que la scène ait rendu ses premières images. Le canvas reste monté lors du fondu.
 
 Le bouton « Continue without waiting » et la touche Échap permettent de poursuivre sans attendre. Les erreurs 3D et l’absence de WebGL libèrent aussi l’écran. Le mouvement réduit désactive les rotations décoratives et le fondu ; sans JavaScript, cet écran est masqué pour laisser le contenu lisible.
+
+## Langue, apparence et contenu officiel
+
+Les boutons EN/FR et soleil/lune restent disponibles dans l’en-tête et pendant le chargement. Le choix est conservé localement ; un nouveau visiteur arrive en anglais et en thème sombre. Les changements gardent le même canvas et la même position dans le récit. `html.lang` suit la langue sélectionnée. Le thème clair adapte les contrastes HTML, le sol, le brouillard et l’éclairage 3D.
+
+Les textes sont centralisés dans `lib/copy.ts`. Ils synthétisent les pages officielles de Spot, Atlas, Stretch et Orbit ; les sources sont liées dans l’interface et détaillées dans `docs/CONTENT_SOURCES.md`. Le scan historique d’Atlas est distingué du produit actuel. La traduction française est propre au projet.
 
 ## Architecture
 

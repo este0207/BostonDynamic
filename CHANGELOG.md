@@ -2,6 +2,8 @@
 
 ## 2026-10-29
 
+- feat: intégrer des informations produit sourcées, la traduction EN/FR et les thèmes clair/sombre persistants.
+
 - feat: ajouter un écran de chargement industriel, lié aux assets et à la disponibilité réelle de la scène, avec sortie anticipée et navigation clavier.
 
 - feat: créer le prototype Next.js et la scène React Three Fiber persistante.
