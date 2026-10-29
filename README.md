@@ -20,6 +20,12 @@ npm test
 npm run build
 ```
 
+## Chargement initial
+
+Un écran d’initialisation reprend le fond noir, les accents orange et la typographie technique. Sa progression suit le gestionnaire de chargement des assets. La révélation attend que les trois modèles et l’éclairage soient montés et que la scène ait rendu ses premières images. Le canvas reste monté lors du fondu.
+
+Le bouton « Continue without waiting » et la touche Échap permettent de poursuivre sans attendre. Les erreurs 3D et l’absence de WebGL libèrent aussi l’écran. Le mouvement réduit désactive les rotations décoratives et le fondu ; sans JavaScript, cet écran est masqué pour laisser le contenu lisible.
+
 ## Architecture
 
 - `app/` : page, métadonnées et styles.

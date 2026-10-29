@@ -11,3 +11,10 @@ Date : 29 octobre 2026.
 - Émulation mobile 400 × 814 : séparation texte/robots corrigée et revue visuellement ; conclusion et bouton de mouvement réduit testés.
 
 Limites de vérification : pas de mesure de FPS ni de test sur téléphone physique. Le repli sans WebGL est implémenté ; son affichage a été observé pendant le rechargement de développement, sans campagne de compatibilité GPU. Le navigateur de test injecte des attributs `data-lt-installed` sur `html`, ce qui déclenche un avertissement d’hydratation provenant de cette modification externe. React Three Fiber utilise encore `THREE.Clock`, signalé comme déprécié par la version de Three.js installée. Ces avertissements n’ont pas empêché l’affichage ni la navigation testés.
+
+## Chargement initial
+
+- Écran industriel observé en connexion Slow 4G, cache désactivé : progression des assets visible et contenu protégé pendant l’attente.
+- Fin de chargement observée : retrait de l’écran et retour à la scène interactive. Débit normal rétabli après le test.
+- TypeScript, lint et les cinq tests passent après intégration.
+- Build final validé avec `npm run build -- --webpack`. La tentative Turbopack a échoué sur une ouverture de port refusée par l’environnement de validation, y compris après demande d’exécution hors bac à sable.

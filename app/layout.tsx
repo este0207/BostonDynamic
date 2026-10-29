@@ -5,5 +5,6 @@ export const metadata: Metadata = {
   description: 'A cinematic journey through motion, machinery and the future of robotics. An independent interactive study featuring Spot and Atlas.',
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  // Browser extensions can inject attributes on html before React hydrates.
+  return <html lang="en" suppressHydrationWarning><body>{children}</body></html>;
 }
