@@ -2,6 +2,9 @@
 
 ## 2026-10-29
 
+- feat: ajouter la navbar responsive, les pages Robots/Applications/À propos et les trois fiches robot bilingues.
+- feat: proposer les vues 3D interactives de Spot et Atlas et le compagnon discret sur les pages de lecture.
+
 - feat: intégrer des informations produit sourcées, la traduction EN/FR et les thèmes clair/sombre persistants.
 
 - feat: ajouter un écran de chargement industriel, lié aux assets et à la disponibilité réelle de la scène, avec sortie anticipée et navigation clavier.

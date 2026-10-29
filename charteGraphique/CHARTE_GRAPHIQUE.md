@@ -240,3 +240,7 @@ Prévoir une optimisation géométrique des deux robots principaux avant diffusi
 - La scène adapte son sol, son brouillard et ses lumières sans remonter le canvas.
 - Les contenus produit sont des synthèses des sources officielles consignées dans `docs/CONTENT_SOURCES.md`, avec liens d’approfondissement.
 - Le scan historique d’Atlas ne représente pas le produit actuel décrit. Le drone reste un compagnon indépendant.
+
+## 13. Navigation et pages
+
+La navbar dessert Accueil, Robots, Applications et À propos. Les fiches Spot, Atlas et Stretch disposent de routes propres. Les modèles disponibles de Spot et Atlas sont explorables en 3D ; Stretch reste textuel. Les pages conservent EN/FR et clair/sombre. Le drone accompagne les pages de lecture de manière discrète, avec un contrôle de pause. Le menu mobile reste utilisable au clavier et indique la page active.

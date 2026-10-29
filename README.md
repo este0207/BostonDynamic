@@ -32,6 +32,12 @@ Les boutons EN/FR et soleil/lune restent disponibles dans l’en-tête et pendan
 
 Les textes sont centralisés dans `lib/copy.ts`. Ils synthétisent les pages officielles de Spot, Atlas, Stretch et Orbit ; les sources sont liées dans l’interface et détaillées dans `docs/CONTENT_SOURCES.md`. Le scan historique d’Atlas est distingué du produit actuel. La traduction française est propre au projet.
 
+## Pages et navigation
+
+La navbar commune dessert l’accueil `/`, le catalogue `/robots`, les usages `/applications` et le projet `/about`. Les fiches `/robots/spot`, `/robots/atlas` et `/robots/stretch` disposent de métadonnées et de liens vers leurs sources officielles. Les slugs inconnus retournent une page 404.
+
+Spot et Atlas ont une vue 3D manipulable avec rotation automatique facultative. Stretch dispose d’une fiche textuelle, sans modèle inventé. Le drone accompagne les pages de lecture et peut être mis en pause. Le menu mobile utilise un contrôle natif, se ferme au choix d’une page ou avec Échap et indique la page active. Langue et thème sont conservés entre les pages.
+
 ## Architecture
 
 - `app/` : page, métadonnées et styles.

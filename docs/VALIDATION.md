@@ -27,3 +27,11 @@ Limites de vérification : pas de mesure de FPS ni de test sur téléphone physi
 - Chrome desktop et émulation 400 × 814 : changements EN/FR et clair/sombre contrôlés visuellement. Préférences FR/clair restaurées après rechargement, y compris dans l’écran de chargement.
 - Les pages sources et la distinction entre scan historique et Atlas actuel sont consignées dans `CONTENT_SOURCES.md`.
 - La qualité sur téléphone physique reste à vérifier ; aucune mesure de FPS n’est ajoutée.
+
+## Navigation multipage
+
+- Routes `/`, `/robots`, `/applications`, `/about`, `/robots/spot`, `/robots/atlas` et `/robots/stretch` contrôlées : HTTP 200. `/robots/unknown` retourne HTTP 404.
+- Catalogue Robots vérifié visuellement sur desktop ; modèle Spot et contrôle de rotation testés.
+- Menu mobile contrôlé à 400 × 814 : ouverture, passage vers Applications et fermeture du menu, conservation du français.
+- Les pistes de grille des vues 3D ont été bornées pour éviter leur élargissement par la taille intrinsèque du canvas.
+- Le build génère les trois fiches avec `generateStaticParams`. Aucun modèle Stretch n’est simulé.

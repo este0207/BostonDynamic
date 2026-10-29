@@ -7,7 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowDown, ArrowUpRight, MoveUpRight, Pause, Play } from 'lucide-react';
 import { copy } from '@/lib/copy';
 import { usePreferences } from './preferences';
-import { PreferenceControls } from './preference-controls';
 import { ArrivalLoader } from './arrival-loader';
 import { chapters, initialSceneState } from '@/lib/story';
 const Scene = dynamic(() => import('./scene'), { ssr: false });
@@ -125,17 +124,11 @@ export default function Experience() {
   return <>
     {!arrivalDismissed && <ArrivalLoader ready={sceneReady || failed || webgl === false} onDismiss={dismissArrival} />}
     <div inert={webgl !== null && !arrivalDismissed ? true : undefined} ref={root} className="experience" data-scene={webgl && !failed ? 'enabled' : 'fallback'}>
-      <a className="skip-link" href="#story">{t.ui.skip}</a>
       <div className="scene-backdrop" aria-hidden="true" />
       <div className="canvas-layer" aria-hidden="true">
         {webgl && !failed && <CanvasBoundary onError={onSceneError}><Scene story={story} onError={onSceneError} onReady={onSceneReady} /></CanvasBoundary>}
       </div>
       <div className="scene-vignette" aria-hidden="true" />
-      <header className="site-header">
-        <a href="#awakening" className="wordmark" aria-label={t.ui.home}><span className="brand-symbol" aria-hidden="true">✳</span><span>EVOLUTION<br />OF MOTION<span className="wordmark-dot">.</span></span></a>
-        <div className="header-meta"><span className="status-dot" /> {t.ui.study} <span className="edition">/ VOL. 001</span></div>
-        <div className="header-actions"><a href="#frontier" className="index-link">{t.ui.index} <ArrowUpRight size={14} /></a><PreferenceControls labels={t.ui} /></div>
-      </header>
       <nav className="chapter-nav" aria-label={t.ui.chapters}>
         {chapters.map((chapter, i) => <a key={chapter.id} href={`#${chapter.id}`} aria-label={`${String(i + 1).padStart(2, '0')}: ${t.chapters[i]}`} aria-current={activeChapter === i ? 'step' : undefined}><span className="nav-label">{t.chapters[i]}</span><span className="nav-number">0{i + 1}</span><span className="nav-tick" /></a>)}
       </nav>
